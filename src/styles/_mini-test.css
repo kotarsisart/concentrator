@@ -1,0 +1,130 @@
+.focus-test-box {
+  background: linear-gradient(145deg, #e0e7ff, #ede9fe);
+  border-radius: 20px;
+  box-shadow: 0 16px 32px rgba(99, 102, 241, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  width: 100%;
+  max-width: 480px;
+  height: 320px;
+  padding: 36px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.focus-test-box:hover {
+  transform: translateY(-4px);
+}
+
+.focus-test__title {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.focus-test__subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  margin-bottom: 24px;
+  font-style: italic;
+  text-align: center;
+}
+
+.focus-test__button {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: white;
+  width: 220px;
+  padding: 14px 32px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.focus-test__button:hover {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  transform: scale(1.04);
+}
+
+.focus-test__status {
+  margin-top: auto;
+  min-height: 28px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.focus-test__status.now {
+  color: #10b981;
+  font-weight: 600;
+  animation: pulse 0.8s ease-out;
+  letter-spacing: 0.5px;
+}
+
+.focus-test__status.good {
+  background: #dcfce7;
+  color: #166534;
+  border-left: 4px solid #22c55e;
+}
+
+.focus-test__status.medium {
+  background: #fef9c3;
+  color: #92400e;
+  border-left: 4px solid #facc15;
+}
+
+.focus-test__status.bad {
+  background: #fee2e2;
+  color: #991b1b;
+  border-left: 4px solid #ef4444;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus-test-box {
+    max-width: 90vw;
+    height: 65vw;
+    padding: 24px 16px;
+  }
+
+  .focus-test__title {
+    font-size: 1.3rem;
+  }
+
+  .focus-test__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .focus-test__button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .focus-test__status {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}

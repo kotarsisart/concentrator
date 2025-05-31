@@ -1,0 +1,124 @@
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #f0f4ff, #e0f2fe);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-header .container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 8px 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #111827;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #6366f1;
+}
+
+.logo img {
+  width: 36px;
+  height: auto;
+}
+
+.lang-dropdown {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.focus-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 20px;
+}
+
+.focus-calibration {
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.focus-meter {
+  font-size: 0.85rem;
+  color: #334155;
+  padding: 4px 10px;
+  border: 1px solid rgba(100,116,139, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 250px;
+}
+
+.focus-icon {
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+}
+
+.focus-bar {
+  width: 100px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 8px;
+}
+
+.focus-bar__fill {
+  height: 100%;
+  background: linear-gradient(to right, #6366f1, #60a5fa);
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .focus-calibration {
+    display: none;
+  }
+
+  .focus-bar {
+    display: none;
+  }
+
+  .focus-meter {
+    padding: 4px 8px;
+    font-size: 1rem;
+    gap: 6px;
+    max-width: fit-content;
+  }
+
+  .focus-meter span {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 488px) {
+  .focus-meter {
+    padding: 2px 4px;
+    font-size: 0.8rem;
+  }
+}

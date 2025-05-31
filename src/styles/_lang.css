@@ -1,0 +1,128 @@
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-button {
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+}
+
+.lang-button:hover {
+  transform: scale(1.05);
+}
+
+.lang-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 1s ease;
+}
+
+.lang-button:hover .lang-icon {
+  transform: rotate(360deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  min-width: 180px;
+  z-index: 1000;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(-8px) scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  visibility: hidden;
+  transform-origin: top right;
+}
+
+.lang-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.lang-menu button {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111827;
+
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lang-menu.show button {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lang-menu.show button:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.lang-menu.show button:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.lang-menu.show button:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.lang-menu.show button:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.lang-menu button:hover {
+  color: #1e3a8a;
+}
+
+.lang-button:hover {
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.lang-menu button.active {
+  background-color: #e0f2fe;
+  font-weight: 600;
+  color: #0c4a6e;
+}
+
+.change-lang-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+@keyframes initial-globe-hint {
+  0% { transform: rotate(0deg) scale(1); }
+  40% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.lang-button.hint .lang-icon {
+  animation: initial-globe-hint 1.4s ease-out;
+}
