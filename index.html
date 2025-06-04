@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <meta name="description" content="Order your very own Concentrator™ — the only device that channels universal attention. Ironically mysterious.">
+  <meta name="keywords" content="concentrator, focus, ironic device, attention, landing page, parody">
+  <meta name="kotarsis_art" content="Tymofii Stepurskyi">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Concentrator™ - Order a Focus">
+  <meta property="og:description" content="Mysterious ironic landing. Fill out an application and get a focus.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://concentratorlabs.com/" />
+
+  <!-- Favicon & App -->
+  <link rel="icon" href="src/images/concentrator-favicon.png" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="src/images/logo/concentrator-logo.png">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Scripts -->
+  <script src="./config.js" defer></script>
+  <script src="./script.js" defer></script>
+
+  <title>Concentrator™</title>
+</head>
+
+<body data-token="7830831627:AAGrXSW2IvY7nQeE_SrXh89t0uyvPznHlNM" data-chat-id="1238137196">
+  <header class="main-header">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./src/images/logo/concentrator-logo.png" alt="concentrator logo">
+        <span class="logo-text">Concentrator™</span>
+      </a>
+
+      <span class="focus-calibration" data-i18n="focus_calibration">"Stabilize your cognitive energy levels."</span>
+
+      <div class="focus-meter" id="focusMeter">
+        <img src="./src/images/icons/brain.svg" alt="" class="focus-icon">
+        Focus: <span id="focusLevel">62%</span>
+        <div class="focus-bar">
+          <div class="focus-bar__fill" id="focusBarFill" style="width: 62%"></div>
+        </div>
+      </div>
+
+      <div class="lang-dropdown">
+        <button class="lang-button" id="langBtn">
+          <img src="./src/images/icons/globe-line-icon.svg" alt="change language" class="lang-icon">
+        </button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang-select="en"><img src="./src/images/icons/languages-icons/united-kingdom-flag-icon.svg" class="change-lang-icon">English</button>
+          <button data-lang-select="ru"><img src="./src/images/icons/languages-icons/russia-flag-icon.svg" class="change-lang-icon">Русский</button>
+          <button data-lang-select="ua"><img src="./src/images/icons/languages-icons/ukraine-flag-icon.svg" class="change-lang-icon">Українська</button>
+          <button data-lang-select="pl"><img src="./src/images/icons/languages-icons/poland-flag-icon.svg" class="change-lang-icon">Polski</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- animation for hero block -->
+  <div class="site-overlay" id="heroOverlay"></div>
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-preheading fade-in" data-i18n="hero_preheading">Concentrate without effort</p>
+      <h1 class="hero-title fade-in" data-i18n="hero_title">
+        Concentrator™
+      </h1>
+      <p class="hero-subtitle fade-in delay-1" data-i18n="hero_subtitle">
+        Next-generation focus technology
+      </p>
+      <button class="hero-button fade-in delay-2" aria-label="Activate focus mode" data-i18n="cta_button">
+        Activate Focus
+      </button>
+      <p class="hero-counter fade-in delay-2">
+        <span data-i18n="focus_count_label">Already concentrated:</span>
+        <span id="focusCount">10700</span>
+      </p>
+    </div>
+  </section>
+  <!-- how it works -->
+  <section class="how-it-works" id="how-it-works">
+    <h2 class="how-it-works__title" data-i18n="how_title">
+      How does the Concentrator™ work
+    </h2>
+    <div class="how-it-works__steps">
+      <div class="how-it-works__step">
+        <img src="./src/images/icons/how-it-works-icons/laptop.svg"
+        alt="Ставите рядом"
+        class="how-it-works__icon">
+        <p data-i18n="how_step1">You place it nearby</p>
+      </div>
+      <div class="how-it-works__step">
+        <img src="./src/images/icons/how-it-works-icons/power-off.svg"
+        alt="Ничего не делает"
+        class="how-it-works__icon">
+        <p data-i18n="how_step2">It does nothing</p>
+      </div>
+      <div class="how-it-works__step">
+        <img src="./src/images/icons/how-it-works-icons/flame.svg"
+        alt="Вы работаете"
+        class="how-it-works__icon">
+        <p data-i18n="how_step3">You work like a beast</p>
+      </div>
+    </div>
+  </section>
+  <!-- availability -->
+  <section class="availability">
+    <h2 class="availability__title" data-i18n="availability_title">
+      Only <span id="units-left">2</span> devices left out of 20
+    </h2>
+    <div class="availability__bar">
+      <div class="availability__progress" id="progress-bar"></div>
+    </div>
+    <p class="availability__note">
+      <span data-i18n="availability_note">The offer ends in</span>
+      <span id="timer">01:00:00</span>
+    </p>
+    <button class="availability__button"
+    onclick="simulateOrder()"
+    data-i18n="availability_button">
+      Try to Buy
+    </button>
+    <p class="availability__message"
+    id="sold-out-message"
+    data-i18n="availability_message">
+      Focus is unavailable. Please perform a self-control session.
+    </p>
+  </section>
+  <!-- testimonials -->
+  <section class="testimonials" id="testimonials" data-animate>
+    <h2 class="testimonials__title" data-i18n="reviews_title">
+      User Reviews
+    </h2>
+    <div class="testimonials__list" id="carousel">
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_1">
+          “Finished my thesis in one night. No idea how.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_jakub">
+            Jakub
+          </span>
+          <span class="testimonial__date">21.05.2025</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_2">
+          “Deleted TikTok. It worked.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_james">
+            James
+          </span>
+          <span class="testimonial__date">15.04.2025</span>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_3">
+          “The Concentrator™ was just sitting there. I wasn't.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_olena">
+            Olena
+          </span>
+          <span class="testimonial__date">12.03.2025</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_4">
+          “Used to open YouTube. Now I open my eyes.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_emily">
+            Emily
+          </span>
+          <span class="testimonial__date">06.04.2025</span>
+        </div>
+
+      </div>
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_5">
+          “Sat for 10 minutes — left 6 hours later.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_ivan">
+            Ivan
+          </span>
+          <span class="testimonial__date">25.04.2025</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_6">
+          “Managed to submit a report and do laundry. Simultaneously.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_carlos">
+            Carlos
+          </span>
+          <span class="testimonial__date">29.03.2025</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_7">
+          “Forgot about breaks. And food.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_dmytro">
+            Dmytro
+          </span>
+          <span class="testimonial__date">03.05.2025</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_8">
+          “Focus didn't fade. Even with my cat.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_katya">
+            Katya
+          </span>
+          <span class="testimonial__date">14.04.2025</span>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial__text" data-i18n="review_9">
+          “Just turned it on. The rest is history.”</p>
+        <div class="testimonial__footer">
+          <span class="testimonial__author" data-i18n="author_marta">
+            Marta
+          </span>
+          <span class="testimonial__date">18.03.2025</span>
+        </div>
+      </div>
+
+      <div class="testimonial-end-text" id="endText" data-i18n="review_end">
+        ...and other incredible stories
+      </div>
+    </div>
+  </section>
+  <!-- gallery -->
+  <section class="gallery" data-animate>
+    <h2 class="gallery__title" data-i18n="gallery_title">Device Gallery</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/front-view.png" alt="front-view" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/side-view.png" alt="side-view" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/top-angle.png" alt="top-angle view" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/hand_press.png" alt="hand_press" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/interior.png" alt="in interior" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/meditation.png" alt="meditation" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/equipment.png" alt="equipment" loading="lazy"/>
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/in-hands.png" alt="in-hands" loading="lazy"/>
+        </div>
+        <div class="swiper-slide">
+          <img src="./src/images/gallery/full-interior.png" alt="full-interior" loading="lazy"/>
+        </div>
+      </div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <!-- story -->
+  <section class="story" data-animate id="story">
+    <div class="container">
+      <h2 class="story__title" data-i18n="story_title">
+        The Origin of Concentrator™
+      </h2>
+      <p class="story__text" data-i18n="story_text">
+        In a forgotten lab beneath the Carpathian Mountains,
+         a group of eccentric scientists discovered an oscillating
+          field of pure concentration...
+      </p>
+      <img src="./src/images/origin.png"
+      alt="Laboratory"
+      class="story__img" data-animate/>
+      <blockquote class="story__quote"
+      data-i18n="story_quote"
+      data-animate="">
+        We didn’t know how it worked. But it worked.” — Prof. Kostyuk
+      </blockquote>
+    </div>
+  </section>
+  <!-- benefits -->
+  <section class="benefits">
+    <h2 class="benefits__title" data-i18n="benefit_title">
+      Why choose Concentrator™?
+    </h2>
+    <div class="benefits__list">
+      <div class="benefit">
+        <div class="benefit__icon">
+          <img src="src/images/icons/benefits-icons/no-charge.svg"
+          alt="charge"
+          />
+        </div>
+        <h3 class="benefit__heading" data-i18n="first_title">
+          Works without charging
+        </h3>
+        <p class="benefit__text" data-i18n="first_text">
+          Powered by pure intent. Recharged by coworkers' glances.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit__icon">
+          <img src="src/images/icons/benefits-icons/book-question-icon.svg"
+          alt="instructions" 
+          />
+        </div>
+        <h3 class="benefit__heading" data-i18n="third_title">
+          Needs no instructions
+        </h3>
+        <p class="benefit__text" data-i18n="third_text">
+          Just place it nearby. It already knows everything. Maybe even you.
+        </p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__icon">
+          <img src="src/images/icons/benefits-icons/coffee-cat.png?v=1"
+          alt="coffee and cat friendly" 
+          />
+        </div>
+        <h3 class="benefit__heading" data-i18n="second_title">
+          Compatible with coffee and cats
+        </h3>
+        <p class="benefit__text" data-i18n="second_text">
+          Doesn’t interrupt your morning ritual and goes well with purring.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- comparison -->
+  <section class="comparison">
+    <div class="comparison__table-wrapper">
+      <h2 class="comparison__title" data-i18n="comparison_title">
+        Comparison: Concentrator™ vs Regular Timer
+      </h2>
+      <table class="comparison__table">
+        <thead>
+          <tr>
+            <th data-i18n="comparison_parameter">Parameter</th>
+            <th data-i18n="comparison_concentrator">Concentrator™</th>
+            <th data-i18n="comparison_timer">Regular timer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="comparison_focus">Focus boost</td>
+            <td>+300%</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td data-i18n="comparison_power">Power source</td>
+            <td class="comparison__cell-energy">
+              <img src="src/images/inline-icons/energy-atom.svg"
+              alt="atom"
+              class="inline-icon"
+               >
+              <span data-i18n="comparison_power_conc">
+                Not required
+              </span>
+            </td>
+            <td>
+              <img src="src/images/inline-icons/bolt.svg"
+              alt="energy"
+              class="inline-icon"
+              >
+              <span data-i18n="comparison_power_timer">
+                Required
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td data-i18n="comparison_science">
+              Scientific value
+            </td>
+            <td data-i18n="comparison_science_conc">
+              Pseudo
+            </td>
+            <td data-i18n="comparison_science_timer">
+              None
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- comparison__addon -->
+    <section class="comparison__addon-inner">
+        <h2 class="comparison__addon-title" data-i18n="focus_intro_title">
+          Still unsure if Concentrator™ is right for you?
+        </h2>
+        <p class="comparison__addon-subtitle" data-i18n="focus_intro_subtitle">
+          Let’s put your focus to the test — literally.
+        </p>
+    </section>
+      <!-- mini-test -->
+    <section class="focus-test-box" id="mini-test">
+      <h3 class="focus-test__title" data-i18n="focus_test_title">
+        Test your focus
+      </h3>
+      <p class="focus-test__subtitle" data-i18n="focus_test_subtitle">
+        Click when you're ready... but wait for the signal!
+      </p>
+      <button class="focus-test__button" id="startFocusTest" data-i18n="focus_test_start">
+        I'm ready to focus
+      </button>
+
+      <p class="focus-test__status" id="focusStatus"></p>
+    </section>
+
+  </section>
+
+    
+
+  <!-- faq -->
+  <section class="faq" id="faq" data-animate>
+    <h2 class="faq__title" data-i18n="faq_title">
+      Frequently Asked Questions
+    </h2>
+    <div class="faq__item">
+      <button class="faq__question" data-i18n="faq_q1">
+        How does the Concentrator™ work?
+      </button>
+      <div class="faq__answer">
+        <p data-i18n="faq_a1">
+          It boosts focus by 300% using pseudoscientific impulses and imagination.
+        </p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" data-i18n="faq_q2">
+        Are there any side effects?
+      </button>
+      <div class="faq__answer">
+        <p data-i18n="faq_a2">
+          Only side successes: increased productivity, charm, and humor.
+        </p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" data-i18n="faq_q3">
+        Can I use it on public transport?
+      </button>
+      <div class="faq__answer">
+        <p data-i18n="faq_a3">
+          Yes, especially if you want to focus on reading the fine print on your fine.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- order form  -->
+  <section class="order" id="order" data-animate>
+    <h2 class="order__title" data-i18n="order_title">
+      Order Focus
+    </h2>
+    <form class="order__form" id="orderForm">
+      <input type="text" name="name" 
+      class="order__input" 
+      data-i18n="order_name_placeholder" 
+      placeholder="Your name" 
+      />
+
+      <input type="text" name="email" 
+      class="order__input" 
+      data-i18n="order_email_placeholder" 
+      placeholder="example@gmail.com" 
+      />
+
+      <textarea name="comment" 
+      class="order__textarea" 
+      data-i18n="order_comment_placeholder" 
+      placeholder="Comment or question">
+      </textarea>
+
+      <button type="submit" 
+      class="order__button" 
+      data-i18n="order_submit">
+      Order focus
+      </button>
+    </form>
+    <div class="form-message" id="formMessage"></div>
+  </section>
+<!-- footer -->
+  <footer class="main-footer">
+    <nav class="footer-links">
+      <a href="#how-it-works" data-i18n="footer_nav_how">
+        How it works
+      </a>
+      <a href="#testimonials" data-i18n="footer_nav_reviews">
+        Reviews
+      </a>
+      <a href="#order" data-i18n="footer_nav_order">
+        Order
+      </a>
+      <a href="#mini-test" data-i18n="footer_nav_test">
+        Concentration test
+      </a>
+      <a href="#faq">
+        FAQ
+      </a>
+    </nav>
+
+    <div class="container">
+      <p class="footer-text" data-i18n="footer_text">
+        © 2025 Concentrator™ <br> Made with love and pseudoscience
+      </p>
+
+      <p class="created-by">
+        <a href="https://github.com/kotarsisart" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> @kotarsisart
+        </a>
+        &nbsp;·&nbsp;
+        <a href="https://t.me/kotarsis_art" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-telegram"></i> Telegram
+        </a>
+      </p>
+    </div>
+  </footer>
+  
+  <!-- scripts and scroll up button -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <button class="scroll-up" id="scrollUp">
+    <i class="fa-solid fa-circle-arrow-up"></i>
+  </button>
+
+</body>
+</html>

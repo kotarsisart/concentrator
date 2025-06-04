@@ -15,11 +15,16 @@
 @import './src/styles/_comparison.css';
 @import './src/styles/_mini-test.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
   background-color: #f1f5f9;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 [data-animate] {

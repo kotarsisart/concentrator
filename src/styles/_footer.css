@@ -4,6 +4,9 @@
   color: #f8fafc;
   padding: 1.4rem 1rem;
   text-align: center;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-links {
@@ -25,7 +28,6 @@
   transform: scale(1.1);
 }
 
-
 .footer-text {
   margin-bottom: 0.5rem;
   line-height: 1.5;
@@ -34,7 +36,6 @@
 .footer a:hover {
   text-shadow: 0 0 5px #fff;
 }
-
 
 .created-by {
   font-size: 0.9rem;

@@ -16,7 +16,6 @@
   padding-bottom: 50px;
 }
 
-
 .swiper-slide {
   display: flex;
   justify-content: center;
@@ -55,7 +54,6 @@
   color: black;
   z-index: 10;
 }
-
 
 .swiper-button-next::after,
 .swiper-button-prev::after {

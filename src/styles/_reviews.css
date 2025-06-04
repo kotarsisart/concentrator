@@ -17,7 +17,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
   gap: 30px;
